@@ -1,9 +1,124 @@
-<!DOCTYPE html>
-<html lang="en">
-    <head>
-        <title>My site</title>
-    </head>
-    <body>
-        <h1>This is my GitHub Pages website</h1>
-    </body>
-</html>
+<!-- 
+    El lenguaje como tela, 
+    como una jerga con la embarramos más la mierda
+    o con la cual trapeamos con Pinol el piso de nuestra cotidianeidad
+ -->
+ <!DOCTYPE html>
+ <html lang="es">
+ <head>
+     <meta charset="UTF-8">
+     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>JergaBinaria</title>
+     <!-- <link rel="stylesheet" href="https://necolas.github.io/normalize.css/8.0.1/normalize.css">
+     <link rel="stylesheet" href="https://meyerweb.com/eric/tools/css/reset/reset.css"> -->
+     <style>
+         * {
+             font-family: monospace;
+             margin: 0;
+             padding: 0;
+             list-style: none;
+         }
+         ::selection {
+             background-color: white;
+             color: black;
+         }
+         .input {
+             width: 80%;
+             margin: auto;
+             padding: 2rem;
+             display: grid;
+             grid-template-rows: 1fr 1fr;
+         }        
+         input {            
+             margin: auto;     
+             padding: .5rem;  
+         }
+         button {
+             border-radius: 10px;            
+             padding: 1rem;
+             font-size: 1rem;
+             margin: auto;
+         }
+         input, button {
+             display: block;
+             margin-bottom: 1rem;
+             background-color: black;
+             color: white;
+             border-style: none;
+         }
+         .jergaBinaria {
+             border: 1px solid black;
+             width: 320px;
+             margin: auto;
+             margin-bottom: 10vh;
+         }
+         .jergaBinaria .fila {
+             display: flex;            
+         }
+         .celda {
+             text-align: center;
+             width: 40px;
+             height: 40px;
+             line-height: 40px;
+             font-size: 2rem;
+         }
+         .jergaBinaria .cero {
+             color: black;
+             background-color: white;    
+         }
+         .jergaBinaria .uno {
+             color: white;
+             background-color: black;
+         }    
+         ul {
+             width: 320px;
+             margin: auto;
+         }    
+         li {
+             text-align: center;
+             font-size: 5.2rem;
+             line-height: 55px;
+         }
+     </style>
+ <!--  ############################################################################ -->    
+     <script>
+         function jergaBinaria() {
+             let html = `<div class="jergaBinaria">`;
+             hilo8b = document.getElementById("hiloInput")
+                     .value
+                     .split("")
+                     .map((char) => char
+                                 .charCodeAt(0)
+                                 .toString(2)
+                                 .padStart(8,0));            
+             for (let hilo of hilo8b) { 
+                 let celda = hilo
+                     .split("")
+                     .map((char) => char == 0 ? char = `<div class="celda cero"></div>`
+                                              : char = `<div class="celda uno"></div>`);
+                 html += `<div class="fila">${celda.join("")}</div>`;                                             
+             }
+             html += `</div><ul>`;
+             // INCLUIR lista de arrays binarios
+             // for (let hilo of hilo8b) {
+             //     let li = `<li>${hilo}</li>`;
+             //     html += li;
+             // }
+             html += `</ul>`;
+             document.getElementById("jergaBinaria").innerHTML = html;
+         }
+     </script>
+ </head>
+ <!--  ############################################################################ -->
+ <body>
+     <div class="input">
+         <input  type="text" 
+                 name="hiloInput" 
+                 id="hiloInput" 
+                 placeholder="Escribe algo">
+         <button onclick="jergaBinaria()">Generar jerga</button>
+     </div>
+     <div id="jergaBinaria"></div>    
+ </body>
+ </html>
