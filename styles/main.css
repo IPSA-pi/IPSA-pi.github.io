@@ -10,6 +10,45 @@
   color: black;
 }
 
+.input {
+  width: 80%;
+  margin: auto;
+  padding: 2rem;
+  display: grid;
+  grid-template-rows: 1fr 1fr;
+}
+
+input {
+  margin: auto;
+  padding: 0.5rem;
+}
+
+button {
+  border-radius: 10px;
+  padding: 1rem;
+  font-size: 1rem;
+  margin: auto;
+}
+
+input, button {
+  display: block;
+  margin-bottom: 1rem;
+  background-color: black;
+  color: white;
+  border-style: none;
+}
+
+.jergaBinaria {
+  border: 1px solid black;
+  width: 320px;
+  margin: auto;
+  margin-bottom: 10vh;
+}
+
+.jergaBinaria .fila {
+  display: flex;
+}
+
 #jergaBinariaRelok {
   padding-top: 2rem;
   height: 100vh;
@@ -22,31 +61,26 @@
   height: 360px;
   filter: blur(25px);
 }
-
-.fila {
-  display: flex;
-  flex-direction: row;
+.jergaBinariaRelok .fila {
+  display: grid;
+  grid-template-rows: 1fr;
 }
-
-.celda {
+.jergaBinariaRelok .celda {
   text-align: center;
   width: 60px;
   height: 60px;
   line-height: 40px;
   font-size: 2rem;
 }
-
-.cero {
+.jergaBinariaRelok .cero {
   color: black;
   background-color: white;
 }
-
-.uno {
+.jergaBinariaRelok .uno {
   color: white;
   background-color: black;
 }
-
-.tiempo {
+.jergaBinariaRelok .tiempo {
   width: fit-content;
   margin: auto;
   text-align: center;
@@ -55,8 +89,7 @@
   margin-top: 3rem;
   /* text-shadow: 0 0 10px black; */
 }
-
-.description {
+.jergaBinariaRelok .description {
   padding: 1rem;
   /* border-top: 4px solid black; */
   width: 80%;
@@ -64,8 +97,7 @@
   background-color: white;
   text-align: justify;
 }
-
-img.bg {
+.jergaBinariaRelok img.bg {
   position: absolute;
 }
 
@@ -111,73 +143,6 @@ img.bg {
   .description {
     font-size: 3rem;
   }
-}
-.input {
-  width: 80%;
-  margin: auto;
-  padding: 2rem;
-  display: grid;
-  grid-template-rows: 1fr 1fr;
-}
-
-input {
-  margin: auto;
-  padding: 0.5rem;
-}
-
-button {
-  border-radius: 10px;
-  padding: 1rem;
-  font-size: 1rem;
-  margin: auto;
-}
-
-input, button {
-  display: block;
-  margin-bottom: 1rem;
-  background-color: black;
-  color: white;
-  border-style: none;
-}
-
-.jergaBinaria {
-  border: 1px solid black;
-  width: 320px;
-  margin: auto;
-  margin-bottom: 10vh;
-}
-
-.jergaBinaria .fila {
-  display: flex;
-}
-
-.celda {
-  text-align: center;
-  width: 40px;
-  height: 40px;
-  line-height: 40px;
-  font-size: 2rem;
-}
-
-.jergaBinaria .cero {
-  color: black;
-  background-color: white;
-}
-
-.jergaBinaria .uno {
-  color: white;
-  background-color: black;
-}
-
-ul {
-  width: 320px;
-  margin: auto;
-}
-
-li {
-  text-align: center;
-  font-size: 5.2rem;
-  line-height: 55px;
 }
 
 /*# sourceMappingURL=main.css.map */
